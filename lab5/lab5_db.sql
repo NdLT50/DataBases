@@ -75,9 +75,8 @@ INSERT INTO inventory VALUES (2, 'Mouse', 25, 30, NOW());
 -- INVALID: quantity < 0
 -- INSERT INTO inventory VALUES (3, 'BrokenItem', -5, 10, NOW());
 
--- =====================
--- PART 3: UNIQUE Constraints
--- =====================
+-------------------------------------------------------------------
+-- PART 3
 
 CREATE TABLE users (
     user_id INT,
