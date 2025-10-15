@@ -1,0 +1,14 @@
+Difference between UNIQUE and PRIMARY KEY:
+A PRIMARY KEY ensures that each record in a table is uniquely identified and cannot contain NULL values.
+A UNIQUE constraint also checks uniqueness of values in a column or a combination of columns, but unlike a primary key, it allows NULL values.
+Each table can have only one PRIMARY KEY, but it can have multiple UNIQUE constraints.
+
+
+When to use a single-column vs. composite PRIMARY KEY:
+Use a single-column primary key when one field (for example, id or employee_id) uniquely identifies each record.
+Use a composite primary key when uniqueness depends on a combination of two or more columns — for example, student_id and course_id together uniquely identify an enrollment record.
+
+
+Why a table can have only one PRIMARY KEY but multiple UNIQUE constraints:
+The PRIMARY KEY represents the main identifier of the table and is used by other tables in foreign key relationships. Because of this, there can only be one.
+UNIQUE constraints can exist on other columns to ensure that certain fields (like email or username) remain unique, but they are not considered the table’s main identifier.
