@@ -1,0 +1,31 @@
+
+
+ 1. What is the difference between INNER JOIN and LEFT JOIN?
+	INNER JOIN returns only rows that have matching values in both tables.	
+	LEFT JOIN returns all rows from the left table and matching rows from the right table.
+	If there is no match, NULLs are shown for the right table columns.
+
+2. When would you use CROSS JOIN in a practical scenario?
+   CROSS JOIN is used when you need all possible combinations of two datasets, for example to create a schedule matrix (every employee paired with every project).
+
+3. Explain why the position of a filter condition (ON vs WHERE) matters for outer joins but not for inner joins.
+	In INNER JOIN, ON and WHERE filters produce the same result because unmatched rows are excluded anyway.
+	In OUTER JOIN, filtering in the ON clause preserves unmatched rows with NULLs, while filtering in the WHERE clause removes them completely.
+
+4. What is the result of:
+	SELECT COUNT(*) FROM table1 CROSS JOIN table2 if table1 has 5 rows and table2 has 10 rows?
+ 		Result = 5 × 10 = 50 rows (Cartesian product).
+
+5. How does NATURAL JOIN determine which columns to join on?
+	NATURAL JOIN automatically joins on all columns that have the same name in both tables.
+
+6. What are the potential risks of using NATURAL JOIN?
+	NATURAL JOIN can produce unexpected results if new columns with matching names are added later.
+	It may also hide join conditions, making the query less readable and harder to maintain.
+
+7. Convert this LEFT JOIN to a RIGHT JOIN:
+	 SELECT * FROM A LEFT JOIN B ON A.id = B.id
+	 	Converted: SELECT * FROM B RIGHT JOIN A ON A.id = B.id;
+
+8. When should you use FULL OUTER JOIN instead of other join types?
+	Use FULL OUTER JOIN when you need to include all rows from both tables, whether they match or not — useful for finding unmatched records or merging datasets.
