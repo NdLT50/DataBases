@@ -44,8 +44,8 @@ SELECT * FROM accounts WHERE name = 'Alice';
 ROLLBACK;
 SELECT * FROM accounts WHERE name = 'Alice';
 
--- a) Balance before rollback = 500.00
--- b) Balance after rollback = 1000.00
+-- a) Balance before rollback = 400.00
+-- b) Balance after rollback = 900.00
 -- c) ROLLBACK is used to cancel incorrect or failed operations.
 
 
